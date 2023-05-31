@@ -14,6 +14,7 @@ const routes = {
   "coming-soon": lazy(() => import("@/pages/utility/coming-soon")),
   "under-construction": lazy(() => import("@/pages/utility/under-construction")),
   pricing: lazy(() => import("@/pages/utility/pricing")),
+  changelog: lazy(() => import("@/pages/utility/changelog")),
   faq: lazy(() => import("@/pages/utility/faq")),
   "*": () => <Navigate to="/404" />,
   home: lazy(() => import("@/pages/utility/blank")),
