@@ -19,7 +19,7 @@ const links = [
 
 export default function ComingSoon() {
   return (
-    <Container className="flex flex-col justify-between min-h-screen lg:px-20 bg-slate-50">
+    <Container className="flex flex-col justify-between min-h-screen lg:px-20">
       {/* TODO: make flex the right way */}
       <div />
 

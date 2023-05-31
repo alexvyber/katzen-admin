@@ -185,7 +185,7 @@ function PricingCard({
           </div>
           <p className="text-sm text-slate-500 dark:text-slate-300">per user/month, annually</p>
         </header>
-        <div className="space-y-8 price-body z-20">
+        <div className="z-20 space-y-8 price-body">
           <p className="text-sm leading-5 text-slate-600 dark:text-slate-300">
             Designed for teams who need to manage complex workflows with more automation and
             integration.
