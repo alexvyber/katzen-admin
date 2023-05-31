@@ -15,6 +15,7 @@ const routes = {
   pricing: lazy(() => import("@/pages/utility/pricing")),
   faq: lazy(() => import("@/pages/utility/faq")),
   "*": () => <Navigate to="/404" />,
+  home: lazy(() => import("@/pages/utility/blank")),
 }
 
 export function App() {
