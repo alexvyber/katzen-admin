@@ -80,9 +80,9 @@ const PricingPage = () => {
     <Container>
       <Card>
         <CardHeader>
-          <div className="flex justify-between xs:flex-row flex-col gap-2">
-            <h4 className="text-xl font-medium text-slate-900 ">Packages</h4>
-            <label className="inline-flex text-sm cursor-pointer ">
+          <div className="flex flex-col gap-2 justify-between xs:flex-row">
+            <h4 className="text-xl font-medium text-slate-900">Packages</h4>
+            <label className="inline-flex text-sm cursor-pointer">
               <input type="checkbox" onChange={toggle} hidden />
               <span
                 className={cx(
@@ -176,7 +176,7 @@ function PricingCard({
             <span className="font-medium leading-10 text-[32px]">{price}</span>
 
             {saving && (
-              <span className="inline-block py-1 px-3  font-semibold text-sm uppercase bg-white border rounded-xl text-slate-800">
+              <span className="inline-block py-1 px-3 text-sm font-semibold uppercase bg-white rounded-xl border text-slate-800">
                 {saving}
               </span>
             )}

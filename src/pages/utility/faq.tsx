@@ -83,7 +83,7 @@ export default function Faq() {
     <Container>
       <Tabs defaultValue={"0"} className="grid grid-cols-12 gap-5">
         <div className="col-span-12 lg:col-span-4 xl:col-span-3">
-          <TabsList className="flex  flex-col">
+          <TabsList className="flex flex-col">
             {faqTitles.map((item, i) => (
               <TabsTrigger className="w-full" value={i.toString()}>
                 {item.title}
