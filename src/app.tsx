@@ -12,6 +12,7 @@ const routes = {
   "blank-page": lazy(() => import("@/pages/utility/blank")),
   "access-denied": lazy(() => import("@/pages/utility/access-denied")),
   "coming-soon": lazy(() => import("@/pages/utility/coming-soon")),
+  pricing: lazy(() => import("@/pages/utility/pricing")),
   "*": () => <Navigate to="/404" />,
 }
 
