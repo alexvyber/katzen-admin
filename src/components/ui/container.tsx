@@ -20,6 +20,6 @@ const variants = cvax(config)
 
 type Props = VariantProps<typeof variants> & React.ComponentProps<"div">
 
-export const Container = ({ variant = "one", className, ...props }: Props) => {
+export const Container = ({ variant = "two", className, ...props }: Props) => {
   return <section className={variants({ variant, className })} {...props} />
 }
