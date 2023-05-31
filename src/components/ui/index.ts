@@ -6,3 +6,4 @@ export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
 export { Separator } from "./separator"
 export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./accordion"
 export { Tabs, TabsList, TabsTrigger, TabsContent } from "./tabs"
+export { ScrollArea, ScrollBar } from "./scroll-area"
