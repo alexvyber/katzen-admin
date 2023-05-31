@@ -77,7 +77,7 @@ const PricingPage = () => {
   }
 
   return (
-    <Container>
+    <Container className="relative">
       <Card>
         <CardHeader>
           <div className="flex flex-col gap-2 justify-between xs:flex-row">
@@ -156,12 +156,14 @@ function PricingCard({
 }) {
   return (
     <div
-      className={cx("relative overflow-hidden rounded-xl p-6   text-slate-900  dark:text-white")}
+      className={cx(
+        "relative overflow-hidden rounded-xl p-6  text-slate-900  dark:text-white z-10"
+      )}
     >
       {ribon && (
         <div
           className={cn(
-            "absolute top-7 rotate-45 -right-10 py-2 px-10 text-sm font-medium text-center text-white transform bg-slate-300",
+            "absolute top-7 rotate-45 -right-10 py-2 px-10 text-sm font-medium text-center text-white transform bg-slate-300 z-30",
             ribon.className
           )}
         >
@@ -169,7 +171,7 @@ function PricingCard({
         </div>
       )}
 
-      <div className="">
+      <div>
         <header className="mb-6">
           <h4 className="mb-5 text-xl">{title}</h4>
           <div className="flex relative items-center mb-5 space-x-4 rtl:space-x-reverse">
@@ -183,7 +185,7 @@ function PricingCard({
           </div>
           <p className="text-sm text-slate-500 dark:text-slate-300">per user/month, annually</p>
         </header>
-        <div className="space-y-8 price-body">
+        <div className="space-y-8 price-body z-20">
           <p className="text-sm leading-5 text-slate-600 dark:text-slate-300">
             Designed for teams who need to manage complex workflows with more automation and
             integration.
@@ -192,15 +194,15 @@ function PricingCard({
             <Button className="w-full dark:border-slate-400">{buttonText}</Button>
           </div>
         </div>
-      </div>
 
-      <div
-        className={cx("absolute top-0 right-0 w-full h-full -z-10 opacity-5")}
-        style={{
-          backgroundImage: bgPattern,
-        }}
-      />
-      <div className={cx("absolute top-0 right-0 w-full h-full -z-20", bgClassName)} />
+        <div
+          className={cx("absolute top-0 right-0 w-full h-full -z-10 opacity-5")}
+          style={{
+            backgroundImage: bgPattern,
+          }}
+        />
+        <div className={cx("absolute top-0 right-0 w-full h-full -z-20 ", bgClassName)} />
+      </div>
     </div>
   )
 }
