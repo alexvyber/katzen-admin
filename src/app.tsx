@@ -12,6 +12,7 @@ const routes = {
   "blank-page": lazy(() => import("@/pages/utility/blank")),
   "access-denied": lazy(() => import("@/pages/utility/access-denied")),
   "coming-soon": lazy(() => import("@/pages/utility/coming-soon")),
+  "under-construction": lazy(() => import("@/pages/utility/under-construction")),
   pricing: lazy(() => import("@/pages/utility/pricing")),
   faq: lazy(() => import("@/pages/utility/faq")),
   "*": () => <Navigate to="/404" />,
@@ -20,7 +21,7 @@ const routes = {
 
 export function App() {
   return (
-    <main className="relative bg-slate-50/20">
+    <main className="relative h-screen bg-slate-50">
       <Routes>
         <Route path="/*" element={<Layout />}>
           {Object.entries(routes).map(([route, Page]) => (
