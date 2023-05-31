@@ -1,21 +1,28 @@
 import { Navigate, Route, Routes } from "react-router-dom"
+import { lazy, Suspense } from "react"
 
 import "@/assets/scss/app.scss"
 import { Layout } from "@/layouts/layout"
-import { Suspense } from "react"
+
 import { Loading } from "@/components/ui"
-import { Error404 } from "@/pages/erros/404"
-import { Blank } from "@/pages/utility/blank"
+
+const Error404 = lazy(() => import("@/pages/erros/404"))
+
+const routes = {
+  "blank-page": lazy(() => import("@/pages/utility/blank")),
+  "access-denied": lazy(() => import("@/pages/utility/access-denied")),
+  "coming-soon": lazy(() => import("@/pages/utility/coming-soon")),
+  "*": () => <Navigate to="/404" />,
+}
 
 export function App() {
   return (
     <main className="relative bg-slate-50/20">
       <Routes>
-        <Route path="/" element={withSuspense(Blank)} />
-
         <Route path="/*" element={<Layout />}>
-          <Route path="blank-page" element={<Blank />} />
-          <Route path="*" element={<Navigate to="/404" />} />
+          {Object.entries(routes).map(([route, Page]) => (
+            <Route path={route} element={<Page />} />
+          ))}
         </Route>
 
         <Route path="/404" element={withSuspense(Error404)} />
@@ -24,7 +31,9 @@ export function App() {
   )
 }
 
-function withSuspense(Component: () => React.ReactElement) {
+function withSuspense(
+  Component: (() => React.ReactElement) | React.LazyExoticComponent<() => React.ReactElement>
+) {
   return (
     <Suspense fallback={<Loading />}>
       <Component />
