@@ -10,7 +10,7 @@ export default {
       colors: {
         primary: {
           ...colors.sky,
-          DEFAULT: colors.sky[300]
+          DEFAULT: colors.sky[300],
         },
         secondary: colors.teal,
         danger: colors.red,
