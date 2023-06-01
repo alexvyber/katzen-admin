@@ -5,6 +5,7 @@ import "@/assets/scss/app.scss"
 import { Layout } from "@/layouts/layout"
 
 import { Loading } from "@/components/ui"
+import { Toaster } from "@/components/ui"
 
 const Error404 = lazy(() => import("@/pages/erros/404"))
 
@@ -16,8 +17,8 @@ const routes = {
   pricing: lazy(() => import("@/pages/utility/pricing")),
   changelog: lazy(() => import("@/pages/utility/changelog")),
   faq: lazy(() => import("@/pages/utility/faq")),
-  "*": () => <Navigate to="/404" />,
   home: lazy(() => import("@/pages/utility/blank")),
+  "*": () => <Navigate to="/404" />,
 }
 
 export function App() {
@@ -32,6 +33,7 @@ export function App() {
 
         <Route path="/404" element={withSuspense(Error404)} />
       </Routes>
+      <Toaster />
     </main>
   )
 }
