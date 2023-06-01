@@ -69,7 +69,7 @@ const pricing: Pricing[] = [
   },
 ]
 
-const PricingPage = () => {
+function Pricing() {
   const [pricingPlan, setPricingPlan] = useState<PricingPlan>("yearly")
 
   const toggle = () => {
@@ -144,14 +144,12 @@ function PricingCard({
   saving?: string
   bgClassName?: string
   buttonText: string
-
   ribon?:
     | undefined
     | {
         className?: string
         title: string
       }
-
   bgPattern?: string
 }) {
   return (
@@ -207,4 +205,4 @@ function PricingCard({
   )
 }
 
-export default PricingPage
+export default Pricing
