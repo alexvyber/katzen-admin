@@ -1,9 +1,12 @@
-import { Sidebar } from "@/components/partials/sidebar"
-import { Input, Loading } from "@/components/ui"
+import {
+  // Input,
+  Loading,
+} from "@/components/ui"
 import { Outlet } from "react-router-dom"
 import { Suspense, useState } from "react"
-import { MenuIcon, Search } from "lucide-react"
+// import { MenuIcon, Search } from "lucide-react"
 import { cx } from "cvax"
+import { Sidebar, Header } from "@/components/partials"
 
 export function Layout() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -15,7 +18,7 @@ export function Layout() {
           className="absolute top-0 left-0 z-20 w-screen h-screen bg-slate-400/40 backdrop-blur-sm"
           onClick={() => setSidebarOpen(false)}
         />
-        <div className="relative z-40 md:hidden">
+        <div className="relative z-40 lg:hidden">
           <div className="flex fixed inset-0 z-40 w-60">
             <div className="flex relative flex-col flex-1 w-60">
               <Sidebar className="z-50" />
@@ -24,16 +27,17 @@ export function Layout() {
         </div>
       </div>
 
-      <div className="hidden md:flex md:fixed md:inset-y-0 md:flex-col">
+      <div className="hidden lg:flex lg:fixed lg:inset-y-0 lg:flex-col">
         <div className="flex overflow-y-auto flex-col flex-grow border-r border-slate-200">
           <Sidebar className="z-50" />
         </div>
       </div>
 
-      <div className="md:pl-64">
-        <div className="flex flex-col mx-auto max-w-4xl md:px-8 xl:px-0">
-          <div className="flex sticky top-0 z-10 flex-shrink-0 h-16 border-b border-slate-200">
-            <button
+      <div className="xl:pl-64">
+        <div className="flex flex-col mx-auto max-w-4xl xl:px-8">
+          {/* <div className="flex sticky top-0 z-10 flex-shrink-0 h-16"> */}
+          <Header />
+          {/* <button
               type="button"
               className="px-4 md:hidden focus:ring-2 focus:ring-inset focus:outline-none text-slate-400 focus:ring-primary-500"
               onClick={() => setSidebarOpen(true)}
@@ -58,7 +62,7 @@ export function Layout() {
                 </form>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <main className="flex-1">
             <div className="py-6">
