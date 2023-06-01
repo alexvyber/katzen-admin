@@ -14,9 +14,9 @@ const variants = cvax({
   ],
   variants: {
     variant: {
-      default: "bg-accent text-black hover:bg-slate-700 dark:bg-slate-50 dark:text-slate-900",
+      default: "bg-primary text-black hover:bg-primary-400 dark:bg-slate-50 dark:text-slate-900",
       // destructive: "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
-      outline: "bg-transparent text-left ring-1 ring-dark hover:ring-2 ",
+      outline: "bg-transparent text-left ring-1 ring-primary hover:ring-2 ",
       // subtle:
       // "bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100",
       ghost: [
@@ -26,7 +26,7 @@ const variants = cvax({
       // link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
     },
     size: {
-      default: "py-4 px-5",
+      default: "py-1.5 px-3", //"py-4 px-5",
       sm: "h-9 px-2 rounded-md",
       lg: "h-11 px-8 rounded-md",
     },
@@ -46,7 +46,7 @@ const variants = cvax({
   defaultVariants: {
     variant: "default",
     size: "default",
-    rounded: "2xl",
+    rounded: "default",
   },
   compoundVariants: [
     {
