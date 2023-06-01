@@ -18,6 +18,7 @@ const routes = {
   changelog: lazy(() => import("@/pages/utility/changelog")),
   faq: lazy(() => import("@/pages/utility/faq")),
   home: lazy(() => import("@/pages/utility/blank")),
+  welcome: lazy(() => import("@/pages/welcome")),
   "*": () => <Navigate to="/404" />,
 }
 

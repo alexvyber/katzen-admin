@@ -35,6 +35,13 @@ export const MenuItemsVertical: (MenuItemVertical | MenuItemHeader)[] = [
     title: "Some",
   },
   {
+    title: "Welcome",
+    isHidden: true,
+    icon: "heroicons-outline:hand-raised",
+    link: "welcome",
+  },
+
+  {
     title: "Chat",
     isHidden: true,
     icon: "heroicons-outline:chat",
