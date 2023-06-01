@@ -10,6 +10,13 @@ import { Toaster } from "@/components/ui"
 const Error404 = lazy(() => import("@/pages/erros/404"))
 
 const routes = {
+  home: lazy(() => import("@/pages/utility/blank")),
+  dashboard: lazy(() => import("@/pages/utility/blank")),
+  chat: lazy(() => import("@/pages/utility/blank")),
+  todo: lazy(() => import("@/pages/utility/blank")),
+
+  //
+
   "blank-page": lazy(() => import("@/pages/utility/blank")),
   "access-denied": lazy(() => import("@/pages/utility/access-denied")),
   "coming-soon": lazy(() => import("@/pages/utility/coming-soon")),
@@ -17,7 +24,6 @@ const routes = {
   pricing: lazy(() => import("@/pages/utility/pricing")),
   changelog: lazy(() => import("@/pages/utility/changelog")),
   faq: lazy(() => import("@/pages/utility/faq")),
-  home: lazy(() => import("@/pages/utility/blank")),
   welcome: lazy(() => import("@/pages/welcome")),
   "*": () => <Navigate to="/404" />,
 }
