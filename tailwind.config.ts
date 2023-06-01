@@ -8,8 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: colors.violet,
-        secondary: colors.indigo,
+        primary: {
+          ...colors.sky,
+          DEFAULT: colors.sky[300]
+        },
+        secondary: colors.teal,
         danger: colors.red,
         black: colors.slate,
         warning: colors.amber,
