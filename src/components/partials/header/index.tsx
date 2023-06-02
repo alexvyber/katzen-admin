@@ -8,13 +8,14 @@ import { useState } from "react"
 import { useWidth } from "@/hooks/use-width"
 import { Icons } from "@/components/icons"
 import { Logo } from "../logo"
-import { Input } from "@/components/ui"
-import { Search } from "lucide-react"
 
-export function Header({ className = "custom-class" }) {
+import { UserNav } from "./components/user-nav"
+import { TeamSwitcher } from "./components/team-switcher"
+import { CommandMenu } from "./components/command-menu"
+
+export function Header({ className }: React.ComponentProps<"header">) {
   const { width, breakpoints } = useWidth()
   const [collapsed, setMenuCollapsed] = useState(false)
-  const [menuType] = useState("vertical")
 
   const handleOpenMobileMenu = () => {
     console.log("Open Mobile menu")
@@ -27,13 +28,12 @@ export function Header({ className = "custom-class" }) {
     <header className={className}>
       <div
         className={cx(
-          "app-header bg-white px-4 dark:bg-slate-800 md:px-6",
-          "dark:border-b dark:border-slate-700 dark:border-opacity-60",
-          menuType === "horizontal" && width > xl ? "py-1" : "py-3 md:py-6"
+          "bg-white px-4 dark:bg-slate-800 md:px-6 py-2",
+          "dark:border-b dark:border-slate-700 dark:border-opacity-60"
         )}
       >
         <div className="flex justify-between items-center h-full">
-          <div className="flex items-center space-x-2 md:space-x-4">
+          <div className="flex gap-2 items-center md:gap-4">
             {collapsed && width >= xl && (
               <button
                 className="text-xl dark:text-white text-slate-900"
@@ -45,6 +45,9 @@ export function Header({ className = "custom-class" }) {
 
             {width < xl && <Logo />}
 
+            <TeamSwitcher />
+            <CommandMenu />
+
             {width < xl && width >= md && (
               <button
                 className="text-2xl cursor-pointer dark:text-white text-slate-900"
@@ -54,20 +57,7 @@ export function Header({ className = "custom-class" }) {
               </button>
             )}
 
-            <form className="flex w-full md:ml-0" action="#" method="GET">
-              <div className="relative w-full text-slate-400 focus-within:text-slate-600">
-                <div className="flex absolute inset-y-0 left-0 items-center pointer-events-none">
-                  <Search className="w-5 h-5" aria-hidden="true" />
-                </div>
-                <Input
-                  id="search-field"
-                  className="block py-2 pr-3 pl-8 w-full h-full border-transparent sm:text-sm focus:border-transparent focus:ring-0 focus:outline-none placeholder-slate-500 text-slate-900 focus:placeholder-slate-400"
-                  placeholder="Search"
-                  type="search"
-                  name="search"
-                />
-              </div>
-            </form>
+            <div className="flex-1 w-full md:flex-none md:w-auto">{/* <CommandMenu /> */}</div>
           </div>
 
           <div className="flex items-center space-x-3 lg:space-x-6 nav-tools">
@@ -75,6 +65,7 @@ export function Header({ className = "custom-class" }) {
             <SwitchDark />
 
             {width >= md && <Messages />}
+            <UserNav />
 
             {width <= md && (
               <div
