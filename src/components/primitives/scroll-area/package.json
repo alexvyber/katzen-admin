@@ -1,0 +1,24 @@
+{
+  "name": "@radix-ui/react-scroll-area",
+  "version": "1.0.5-rc.3",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./src/index.ts"
+      }
+    }
+  },
+  "source": "./src/index.ts",
+  "main": "./src/index.ts",
+  
+  
+  
+  "sideEffects": false,
+
+
+
+
+
+  "stableVersion": "1.0.4"
+}
