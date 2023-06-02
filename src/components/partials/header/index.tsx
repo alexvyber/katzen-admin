@@ -12,6 +12,7 @@ import { Logo } from "../logo"
 import { UserNav } from "./components/user-nav"
 import { TeamSwitcher } from "./components/team-switcher"
 import { CommandMenu } from "./components/command-menu"
+import { Notifications } from "./components/notifications"
 
 export function Header({ className }: React.ComponentProps<"header">) {
   const { width, breakpoints } = useWidth()
@@ -64,6 +65,7 @@ export function Header({ className }: React.ComponentProps<"header">) {
             <Language />
             <SwitchDark />
 
+            <Notifications />
             {width >= md && <Messages />}
             <UserNav />
 
