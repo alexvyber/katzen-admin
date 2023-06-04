@@ -42,7 +42,7 @@ menuItems
 
 export function App() {
   return (
-    <main className="relative h-screen bg-gray-50 dark:bg-gray-800">
+    <main className="relative min-h-screen bg-gray-50 dark:bg-gray-800">
       <Routes>
         <Route path="/*" element={<Layout />}>
           {Object.entries(routes).map(([route, Page]) => (
