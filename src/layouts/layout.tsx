@@ -1,53 +1,37 @@
 import { Loading } from "@/components/ui"
 import { Outlet } from "react-router-dom"
-import {
-  Suspense,
-  // useState
-} from "react"
-// import { MenuIcon } from "lucide-react"
-// import { cx } from "cvax"
-import { Sidebar, Header } from "@/components/partials"
+import { Suspense, lazy } from "react"
+import { Header } from "@/components/partials"
+import { cx } from "cvax"
+import useMenuCollapsed from "@/hooks/use-menu-collapsed"
+import { useWidth } from "@/hooks/use-width"
+
+const Sidebar = lazy(() => import("@/components/partials/sidebar"))
 
 export function Layout() {
-  // const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [collapsed] = useMenuCollapsed()
+  const { width, breakpoints } = useWidth()
 
   return (
     <>
-      {/* <div className={cx(sidebarOpen ? "block" : "hidden", "relative")}>
-        <div className="relative z-40 lg:hidden">
-          <div className="flex fixed inset-0 z-40 w-60">
-            <div className="flex relative flex-col flex-1 w-60">
-              <Sidebar className="z-50" />
-            </div>
+      {width > breakpoints.lg && (
+        <div className="hidden lg:flex lg:fixed lg:inset-y-0 lg:flex-col">
+          <div className="flex overflow-y-auto flex-col flex-grow bg-white border-r border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+            <Sidebar />
           </div>
         </div>
-      </div> */}
+      )}
 
-      <div className="hidden lg:flex lg:fixed lg:inset-y-0 lg:flex-col">
-        <div></div>
-        <div className="flex overflow-y-auto flex-col flex-grow border-r border-slate-200">
-          <Sidebar className="z-50" />
-        </div>
-      </div>
+      <div>
+        <header className={cx(width > breakpoints.lg && (collapsed ? "pl-20" : "pl-60"))}>
+          <Header />
+        </header>
 
-      <div className="lg:pl-60">
-        <Header />
-        {/* <div className="flex sticky top-0 z-10 flex-shrink-0 h-16">
-          <button
-            type="button"
-            className="px-4 md:hidden focus:ring-2 focus:ring-inset focus:outline-none text-slate-400 focus:ring-primary-500"
-            onClick={() => setSidebarOpen(true)}
-          >
-            <MenuIcon className="w-6 h-6" aria-hidden="true" />
-          </button>
-        </div> */}
-        <div className="flex flex-col mx-auto max-w-7xl xl:px-8">
-          <main className="flex-1">
-            <div className="py-6">
-              <Suspense fallback={<Loading />}>
-                <Outlet />
-              </Suspense>
-            </div>
+        <div className={cx(width > breakpoints.lg && (collapsed ? "pl-20" : "pl-60 pt-"))}>
+          <main className="flex-1 p-1.5 2xs:p-2">
+            <Suspense fallback={<Loading />}>
+              <Outlet />
+            </Suspense>
           </main>
         </div>
       </div>
