@@ -394,6 +394,12 @@ export const menuItems = [
     link: "changelog",
     badge: "0.0.0",
   },
+  {
+    show: true,
+    title: "Maps",
+    icon: "lucide:map-pin",
+    link: "maps",
+  },
 ]
   // TODO: rework pre-release
   .filter((item) => item.show)
