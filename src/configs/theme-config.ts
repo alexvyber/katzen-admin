@@ -1,8 +1,13 @@
-export const themeConfig = {
-  app: {
-    name: "Katzen Admin",
-  },
-  layout: {
-    darkMode: false,
-  },
+export type ThemeConfig = {
+  appName: string
+  darkMode: boolean
+  contentWidth: "full" | "boxed"
+  menuCollapsed: boolean
+}
+
+export const themeConfig: ThemeConfig = {
+  appName: "Katzen Admin",
+  darkMode: false,
+  contentWidth: "full",
+  menuCollapsed: true,
 }

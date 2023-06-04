@@ -1,40 +1,29 @@
-export type MenuItem = {
-  title: string
-  icon: string
-  badge?: string
-  isOpen?: boolean
-  isHidden?: boolean
-  isHeader?: undefined | null | false
-}
-
 export type MenuItemChild = {
   title: string
   link: string
-  icon: string
+  show: boolean
 }
 
 export type MenuItemHeader = {
   title: string
-  isHeader: true
+  show: boolean
 }
 
-export type MenuItemBasic =
-  | ({
-      link: string
-    } & MenuItem)
-  | MenuItemHeader
+export type MenuItemBasic = {
+  title: string
+  icon: string
+  badge?: string
+  link: string
+  show: boolean
+}
 
-export type MenuItemWithChildren = MenuItem & {
+export type MenuItemWithChildren = {
+  title: string
+  icon: string
+  badge?: string
+  path: string
+  show: boolean
   children: MenuItemChild[]
 }
 
-export type MenuItemWithMegamenu = MenuItemBasic & {
-  megamenu: {
-    megamenutitle: string
-    megamenuicon: string
-    singleMegamenu: {
-      title: string
-      link: string
-    }[]
-  }[]
-}
+export type MenuItems = (MenuItemBasic | MenuItemHeader | MenuItemWithChildren)[]
