@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom"
 import { Cog } from "lucide-react"
 import { Icons } from "@/components/icons"
+import { Container } from "@/components/ui"
 
 const UnderConstruction = () => {
   return (
-    <div className="">
+    <Container>
       <div className="container">
         <div className="flex flex-col flex-wrap justify-center items-center text-center">
           <Cog className="w-12 h-12 text-gray-600" />
@@ -62,7 +63,7 @@ const UnderConstruction = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }
 
