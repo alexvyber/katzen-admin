@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import { messages } from "@/mock/data"
 import { Icons } from "@/components/icons"
-import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,14 +15,12 @@ export function Messages() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          <span className="flex relative flex-col justify-center items-center text-lg text-gray-900 rounded-full cursor-pointer lg:w-8 lg:h-8 lg:bg-gray-100 dark:text-white lg:dark:bg-gray-900">
-            <Icons icon="heroicons-outline:mail" />
-            <span className="flex absolute -top-2 -right-2 flex-col justify-center items-center w-4 h-4 font-semibold text-white bg-red-500 rounded-full lg:top-0 lg:right-0 text-[8px]">
-              10
-            </span>
+        <span className="flex relative flex-col justify-center items-center text-lg text-gray-900 rounded-full cursor-pointer lg:w-8 lg:h-8 lg:bg-gray-100 dark:text-white lg:dark:bg-gray-900">
+          <Icons icon="heroicons-outline:mail" />
+          <span className="flex absolute -top-2 -right-2 flex-col justify-center items-center w-4 h-4 font-semibold text-white bg-red-500 rounded-full lg:top-0 lg:right-0 text-[8px]">
+            10
           </span>
-        </Button>
+        </span>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="p-1 w-80 rounded-xl">
         <DropdownMenuLabel>

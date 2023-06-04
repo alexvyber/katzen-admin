@@ -1,5 +1,4 @@
 import { cx } from "cvax"
-import { Language } from "./components/language"
 import { Messages } from "./components/messages"
 import { SwitchDark } from "./components/switch-dark"
 import { useWidth } from "@/hooks/use-width"
@@ -11,6 +10,8 @@ import { Notifications } from "./components/notifications"
 import { useState } from "react"
 import { menuItems } from "@/configs/menu-items"
 import { ExpandedMenu } from "../sidebar/nav-menu"
+
+// import { Language } from "./components/language"
 // import { TeamSwitcher } from "./components/team-switcher"
 // import { CommandMenu } from "./components/command-menu"
 
@@ -30,14 +31,14 @@ export function Header() {
           {/* {width > breakpoints.lg && <TeamSwitcher />} */}
           {/* {width > breakpoints.lg && <CommandMenu />} */}
           {width < breakpoints.lg && <MobileNav />}
-          {width < breakpoints.lg && <Logo />}
+          {width < breakpoints.lg && <Logo collapsed={width < breakpoints["2xs"]} />}
         </div>
 
         <div className="flex gap-3 items-center">
-          {width >= breakpoints["sm"] && <Language />}
+          {/* {width >= breakpoints["sm"] && <Language />} */}
           <SwitchDark />
           <Notifications />
-          {width >= breakpoints.md && <Messages />}
+          <Messages />
           <UserNav />
         </div>
       </div>
