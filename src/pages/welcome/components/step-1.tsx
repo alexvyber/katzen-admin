@@ -5,7 +5,10 @@ import { StepProps } from "./types"
 export default function Step1({ onNext, onSkip }: StepProps) {
   return (
     <div className="flex flex-col gap-5 text-center">
-      <img src={WelcomeSVG} className="mx-auto h-96 bg-white rounded-xl border" />
+      <img
+        src={WelcomeSVG}
+        className="mx-auto h-96 bg-white rounded-xl border border-gray-200 dark:bg-gray-700 dark:border-gray-500"
+      />
       <div>
         <h3 className="mb-2 text-2xl">Welcome on Board, lets get started with Katzen App</h3>
         <p className="text-base">

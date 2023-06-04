@@ -17,7 +17,7 @@ export function Messages() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline">
-          <span className="flex relative flex-col justify-center items-center text-lg rounded-full cursor-pointer lg:w-8 lg:h-8 dark:text-white text-slate-900 lg:bg-slate-100 lg:dark:bg-slate-900">
+          <span className="flex relative flex-col justify-center items-center text-lg text-gray-900 rounded-full cursor-pointer lg:w-8 lg:h-8 lg:bg-gray-100 dark:text-white lg:dark:bg-gray-900">
             <Icons icon="heroicons-outline:mail" />
             <span className="flex absolute -top-2 -right-2 flex-col justify-center items-center w-4 h-4 font-semibold text-white bg-red-500 rounded-full lg:top-0 lg:right-0 text-[8px]">
               10
@@ -28,10 +28,10 @@ export function Messages() {
       <DropdownMenuContent className="p-1 w-80 rounded-xl">
         <DropdownMenuLabel>
           <div className="flex justify-between">
-            <div className="text-sm font-medium leading-6 text-slate-800 dark:text-slate-200">
+            <div className="text-sm font-medium leading-6 text-gray-800 dark:text-gray-200">
               Messages
             </div>
-            <div className="text-xs md:text-right text-slate-800 dark:text-slate-200">
+            <div className="text-xs text-gray-800 md:text-right dark:text-gray-200">
               <Link to="/chat" className="underline">
                 View all
               </Link>
@@ -45,18 +45,18 @@ export function Messages() {
               key={i}
               className={cx(
                 true
-                  ? "bg-slate-50 text-slate-800 dark:bg-slate-600 dark:bg-opacity-70"
-                  : "text-slate-600 dark:text-slate-300",
+                  ? "bg-gray-50 text-gray-800 dark:bg-gray-600 dark:bg-opacity-70"
+                  : "text-gray-600 dark:text-gray-300",
                 " block w-full cursor-pointer px-4 py-2 text-sm rounded-lg"
               )}
             >
               <div className="flex gap-3">
                 <div className="flex-none">
-                  <div className="relative w-8 h-8 bg-white rounded-full dark:bg-slate-700">
+                  <div className="relative w-8 h-8 bg-white rounded-full dark:bg-gray-700">
                     <span
                       className={cx(
                         item.active ? "bg-secondary-500" : "bg-green-500",
-                        "absolute right-0 top-0 inline-block h-2.5 w-2.5 rounded-full border border-white dark:border-slate-700"
+                        "absolute right-0 top-0 inline-block h-2.5 w-2.5 rounded-full border border-white dark:border-gray-700"
                       )}
                     />
                     <img
@@ -67,11 +67,11 @@ export function Messages() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <div className="mb-1` text-sm font-medium text-slate-800 dark:text-slate-300">
+                  <div className="mb-1` text-sm font-medium text-gray-800 dark:text-gray-300">
                     {item.title}
                   </div>
-                  <div className="mb-1 text-xs text-slate-600 dark:text-slate-300">{item.desc}</div>
-                  <div className="text-xs text-slate-400 dark:text-slate-400">3 min ago</div>
+                  <div className="mb-1 text-xs text-gray-600 dark:text-gray-300">{item.desc}</div>
+                  <div className="text-xs text-gray-400 dark:text-gray-400">3 min ago</div>
                 </div>
                 {item.hasnotifaction && (
                   <div className="flex-0">

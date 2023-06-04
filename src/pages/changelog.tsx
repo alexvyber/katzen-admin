@@ -104,20 +104,20 @@ function Changelog() {
               <Accordion type="single" collapsible>
                 {items.map((item, i) => (
                   <AccordionItem key={i} value={item.version} className="border-none">
-                    <AccordionTrigger className="flex justify-between py-4 px-8 w-full text-base font-medium border-none transition duration-200 cursor-pointer bg-slate-50 text-start text-slate-600 dark:bg-slate-700 dark:text-slate-300">
+                    <AccordionTrigger className="flex justify-between py-4 px-8 w-full text-base font-medium text-gray-600 bg-gray-50 border-none transition duration-200 cursor-pointer dark:text-gray-300 dark:bg-gray-700 text-start">
                       <span>
                         {item.version}
-                        <span className="text-xs font-semibold text-slate-400">
+                        <span className="text-xs font-semibold text-gray-400">
                           - Published on {item.date}
                         </span>
                       </span>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <div className="text-sm font-normal bg-white border-none text-slate-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                      <div className="text-sm font-normal text-gray-600 bg-white border-none dark:text-gray-300 dark:bg-gray-900 dark:border-gray-700">
                         <div className="py-4 px-8">
                           {item.changes.map((data, j) => (
                             <div key={j}>
-                              <div className="flex items-center mt-2 space-x-3 text-sm text-slate-600 dark:text-slate-300">
+                              <div className="flex items-center mt-2 space-x-3 text-sm text-gray-600 dark:text-gray-300">
                                 <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
                                 <span>{data.name}</span>
                                 <span
@@ -156,7 +156,7 @@ function Changelog() {
             <ul className="flex flex-col gap-2">
               {items.map((item, i) => (
                 <li
-                  className="flex justify-between items-center pt-3 pb-1 text-xs border-b text-slate-600 dark:text-slate-300"
+                  className="flex justify-between items-center pt-3 pb-1 text-xs text-gray-600 border-b dark:text-gray-300"
                   key={i}
                 >
                   <span>{item.version} </span>

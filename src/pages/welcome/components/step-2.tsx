@@ -57,7 +57,7 @@ export default function Step2({ onNext, onBack }: StepProps) {
     toast({
       title: "You submitted the following values:",
       description: (
-        <div className="flex flex-col gap-1.5 p-3 font-medium rounded bg-slate-50 text-md">
+        <div className="flex flex-col gap-1.5 p-3 font-medium bg-gray-50 rounded text-md">
           <div>Organization Name: {data.organizationName}</div>
           <div>Organization Size: {data.organizationSize}</div>
         </div>

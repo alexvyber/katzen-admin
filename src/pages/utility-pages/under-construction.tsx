@@ -7,11 +7,11 @@ const UnderConstruction = () => {
     <div className="">
       <div className="container">
         <div className="flex flex-col flex-wrap justify-center items-center text-center">
-          <Cog className="w-12 h-12 text-slate-600" />
-          <h4 className="mb-2 text-3xl font-medium dark:text-white text-slate-900">
+          <Cog className="w-12 h-12 text-gray-600" />
+          <h4 className="mb-2 text-3xl font-medium text-gray-900 dark:text-white">
             We are under maintenance.
           </h4>
-          <p className="text-base font-normal text-slate-500 dark:text-slate-300">
+          <p className="text-base font-normal text-gray-500 dark:text-gray-300">
             We’re making the system more awesome. <br />
             We’ll be back shortly.
           </p>
@@ -40,21 +40,21 @@ const UnderConstruction = () => {
             <div className="flex gap-3 justify-center md:justify-start">
               <Link
                 to="#"
-                className="text-sm transition duration-150 text-slate-500 dark:text-slate-400 hover:text-slate-900"
+                className="text-sm text-gray-500 transition duration-150 dark:text-gray-400 hover:text-gray-900"
               >
                 Privacy policy
               </Link>
 
               <Link
                 to="#"
-                className="text-sm transition duration-150 text-slate-500 dark:text-slate-400 hover:text-slate-900"
+                className="text-sm text-gray-500 transition duration-150 dark:text-gray-400 hover:text-gray-900"
               >
                 Faq
               </Link>
 
               <Link
                 to="#"
-                className="text-sm transition duration-150 text-slate-500 dark:text-slate-400 hover:text-slate-900"
+                className="text-sm text-gray-500 transition duration-150 dark:text-gray-400 hover:text-gray-900"
               >
                 Email us
               </Link>

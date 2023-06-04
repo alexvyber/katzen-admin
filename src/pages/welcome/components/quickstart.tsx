@@ -60,7 +60,7 @@ function QuickStartItem({
       <div className="flex flex-col gap-4 2xs:items-center 2xs:flex-row">
         {disabled ? (
           <span className="text-3xl">
-            <Lock className="text-slate-500" />
+            <Lock className="text-gray-500" />
           </span>
         ) : (
           <span className="flex justify-center items-center w-7 h-7 font-semibold rounded-full border-2 shrink-0">
@@ -68,8 +68,8 @@ function QuickStartItem({
           </span>
         )}
         <div>
-          <h5 className="text-lg text-slate-800">{title}</h5>
-          <p className="text-slate-500">{description}</p>
+          <h5 className="text-lg text-gray-800">{title}</h5>
+          <p className="text-gray-500">{description}</p>
         </div>
       </div>
       <Button disabled={disabled} onClick={handleClick}>

@@ -49,12 +49,12 @@ export default function Step3({ onNext, onBack }: StepProps) {
                 key={value}
                 onClick={() => onClick(value)}
                 className={cx(
-                  "p-4  rounded-lg border dark:bg-slate-800",
-                  value === selected ? "bg-sky-50 text-sky-500" : "bg-white text-slate-900"
+                  "p-4  rounded-lg border dark:bg-gray-800",
+                  value === selected ? "bg-sky-50 text-sky-500" : "bg-white text-gray-900"
                 )}
               >
                 <div className="flex gap-3 items-center">
-                  <span className="text-2xl text-slate-500">
+                  <span className="text-2xl text-gray-500">
                     <Icon className={cx(value === selected && "text-sky-500")} />
                   </span>
                   <h6>{label}</h6>

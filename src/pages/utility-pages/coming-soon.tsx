@@ -24,15 +24,15 @@ export default function ComingSoon() {
       <div />
 
       <div className="flex flex-col gap-7 max-w-2xl">
-        <div className="flex relative items-center text-2xl dark:text-white text-slate-900">
+        <div className="flex relative items-center text-2xl text-gray-900 dark:text-white">
           <span>Coming soon</span>
         </div>
 
-        <div className="text-4xl font-bold lg:text-7xl dark:text-white text-slate-900">
+        <div className="text-4xl font-bold text-gray-900 lg:text-7xl dark:text-white">
           Get notified when we launch
         </div>
 
-        <p className="text-slate-600 dark:text-slate-300">
+        <p className="text-gray-600 dark:text-gray-300">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
         </p>
 
@@ -40,7 +40,7 @@ export default function ComingSoon() {
           <Input
             type="text"
             placeholder="Enter your email"
-            className="flex-1 py-6 bg-white placeholder:text-slate-500"
+            className="flex-1 py-6 bg-white placeholder:text-gray-500"
           />
           <div className="flex-none">
             <Button variant="ghost" type="button">
@@ -49,7 +49,7 @@ export default function ComingSoon() {
           </div>
         </div>
 
-        <div className="text-sm text-slate-500 dark:text-slate-400">
+        <div className="text-sm text-gray-500 dark:text-gray-400">
           Don’t worry we will not spam you
         </div>
       </div>
@@ -62,7 +62,7 @@ export default function ComingSoon() {
                 <Link
                   key={link.href + index}
                   to={link.href}
-                  className="text-sm transition duration-150 text-slate-500 dark:text-slate-400 hover:text-slate-900"
+                  className="text-sm text-gray-500 transition duration-150 dark:text-gray-400 hover:text-gray-900"
                 >
                   {link.title}
                 </Link>

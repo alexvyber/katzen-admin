@@ -81,15 +81,15 @@ function Pricing() {
       <Card>
         <CardHeader>
           <div className="flex flex-col gap-2 justify-between xs:flex-row">
-            <h4 className="text-xl font-medium text-slate-900">Packages</h4>
+            <h4 className="text-xl font-medium text-gray-900">Packages</h4>
             <label className="inline-flex text-sm cursor-pointer">
               <input type="checkbox" onChange={toggle} hidden />
               <span
                 className={cx(
                   "rounded px-[18px] py-1 transition duration-100",
                   pricingPlan === "yearly"
-                    ? "bg-slate-900 text-white dark:bg-slate-900"
-                    : "dark:text-slate-300"
+                    ? "bg-gray-900 text-white dark:bg-gray-900"
+                    : "dark:text-gray-300"
                 )}
               >
                 Yearly
@@ -98,8 +98,8 @@ function Pricing() {
                 className={cx(
                   "rounded px-[18px] py-1 transition duration-100",
                   pricingPlan === "monthly"
-                    ? "bg-slate-900 text-white dark:bg-slate-900"
-                    : "dark:text-slate-300"
+                    ? "bg-gray-900 text-white dark:bg-gray-900"
+                    : "dark:text-gray-300"
                 )}
               >
                 Monthly
@@ -154,14 +154,12 @@ function PricingCard({
 }) {
   return (
     <div
-      className={cx(
-        "relative overflow-hidden rounded-xl p-6  text-slate-900  dark:text-white z-10"
-      )}
+      className={cx("relative overflow-hidden rounded-xl p-6  text-gray-900  dark:text-white z-10")}
     >
       {ribon && (
         <div
           className={cn(
-            "absolute top-7 rotate-45 -right-10 py-2 px-10 text-sm font-medium text-center text-white transform bg-slate-300 z-30",
+            "absolute top-7 rotate-45 -right-10 py-2 px-10 text-sm font-medium text-center text-white transform bg-gray-300 z-30",
             ribon.className
           )}
         >
@@ -176,20 +174,20 @@ function PricingCard({
             <span className="font-medium leading-10 text-[32px]">{price}</span>
 
             {saving && (
-              <span className="inline-block py-1 px-3 text-sm font-semibold uppercase bg-white rounded-xl border text-slate-800">
+              <span className="inline-block py-1 px-3 text-sm font-semibold text-gray-800 uppercase bg-white rounded-xl border">
                 {saving}
               </span>
             )}
           </div>
-          <p className="text-sm text-slate-500 dark:text-slate-300">per user/month, annually</p>
+          <p className="text-sm text-gray-500 dark:text-gray-300">per user/month, annually</p>
         </header>
         <div className="z-20 space-y-8 price-body">
-          <p className="text-sm leading-5 text-slate-600 dark:text-slate-300">
+          <p className="text-sm leading-5 text-gray-600 dark:text-gray-300">
             Designed for teams who need to manage complex workflows with more automation and
             integration.
           </p>
           <div>
-            <Button className="w-full dark:border-slate-400">{buttonText}</Button>
+            <Button className="w-full dark:border-gray-400">{buttonText}</Button>
           </div>
         </div>
 

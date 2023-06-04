@@ -6,24 +6,24 @@ import { Loader2 } from "lucide-react"
 const variants = cvax({
   base: [
     "inline-flex items-center justify-center text-sm font-medium transition-colors",
-    "dark:hover:bg-slate-800 dark:hover:text-slate-100",
-    "focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2",
-    "dark:focus:ring-slate-400 dark:focus:ring-offset-slate-900 data-[state=open]:bg-slate-100 dark:data-[state=open]:bg-slate-800",
+    "dark:hover:bg-gray-800 dark:hover:text-gray-100",
+    "focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2",
+    "dark:focus:ring-gray-400 dark:focus:ring-offset-gray-900 data-[state=open]:bg-gray-100 dark:data-[state=open]:bg-gray-800",
     "disabled:pointer-events-none disabled:opacity-50",
     "active:scale-95",
   ],
   variants: {
     variant: {
-      default: "bg-primary text-black hover:bg-primary-400 dark:bg-slate-50 dark:text-slate-900",
+      default: "bg-primary text-black hover:bg-primary-400 dark:bg-gray-50 dark:text-gray-900",
       // destructive: "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
       outline: "bg-transparent text-left ring-1 ring-primary hover:ring-2 ",
       // subtle:
-      // "bg-slate-100 text-slate-900 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-100",
+      // "bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-100",
       ghost: [
-        "bg-transparent hover:bg-slate-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",
-        // "dark:hover:bg-slate-800 dark:text-slate-100 dark:hover:text-slate-100 ",
+        "bg-transparent hover:bg-gray-100 data-[state=open]:bg-transparent dark:data-[state=open]:bg-transparent",
+        // "dark:hover:bg-gray-800 dark:text-gray-100 dark:hover:text-gray-100 ",
       ],
-      // link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-slate-900 dark:text-slate-100 hover:bg-transparent dark:hover:bg-transparent",
+      // link: "bg-transparent dark:bg-transparent underline-offset-4 hover:underline text-gray-900 dark:text-gray-100 hover:bg-transparent dark:hover:bg-transparent",
     },
     size: {
       default: "py-1.5 px-3", //"py-4 px-5",
