@@ -1,9 +1,11 @@
 import type { Config } from "tailwindcss/types/config"
 
 import colors from "tailwindcss/colors"
+import defaultTheme from "tailwindcss/defaultTheme"
 
 export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  darkMode: "class",
 
   theme: {
     extend: {
@@ -46,6 +48,15 @@ export default {
         },
       },
 
+      spacing: {
+        ...defaultTheme.spacing,
+        ...getSpacingRange({
+          start: 0,
+          numberOfNewSteps: 1000,
+          step: 0.25,
+        }),
+      },
+
       screens: {
         "3xs": "320px",
         "2xs": "384px",
@@ -78,3 +89,26 @@ export default {
 
   plugins: [],
 } satisfies Config
+
+
+
+function getSpacingRange({
+  start,
+  numberOfNewSteps,
+  step = 1,
+}: {
+  start: number
+  numberOfNewSteps: number
+  step?: number
+}): Record<string, string> {
+  const spacing: Record<string, string> = {}
+
+  const cof = step * 4
+  const limit = start + numberOfNewSteps * cof
+
+  for (let i = start + cof; i < limit; i = i + cof) {
+    Object.assign(spacing, { [`${i}`]: `${i / 4}rem` })
+  }
+
+  return spacing as any
+}
