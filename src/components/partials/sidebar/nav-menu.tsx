@@ -75,7 +75,7 @@ export function ExpandedMenu({
               <AccordionTrigger
                 className={cx(
                   "flex cursor-pointer rounded-lg  text-sm font-semibold capitalize text-gray-600 dark:text-gray-300",
-                  "data-[state='open']:bg-secondary-500 data-[state='open']:bg-opacity-20",
+                  "data-[state='open']:bg-primary-500 data-[state='open']:bg-opacity-20",
                   triggerVariants()
                 )}
               >

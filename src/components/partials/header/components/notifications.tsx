@@ -67,7 +67,7 @@ function NotificationItem({ item }: any) {
       )}
     >
       <div className="flex ltr:text-left">
-        <div className="flex-none ltr:mr-3 rtl:ml-3">
+        <div className="flex-none mr-3">
           <div className="w-8 h-8 bg-white rounded-full">
             <img
               src={item.image}

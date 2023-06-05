@@ -1,10 +1,10 @@
 import { cx } from "cvax"
 import { Messages } from "./components/messages"
 import { SwitchDark } from "./components/switch-dark"
-import { useWidth } from "@/hooks/use-width"
+import { useWidth } from "@/hooks/use-window-size"
 import { Icons } from "@/components/icons"
 import { Logo } from "../logo"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui"
+import { ScrollArea, Sheet, SheetContent, SheetTrigger, Viewport } from "@/components/ui"
 import { UserNav } from "./components/user-nav"
 import { Notifications } from "./components/notifications"
 import { useState } from "react"
@@ -57,11 +57,15 @@ const MobileNav = () => {
           <Icons icon="heroicons-outline:menu-alt-2" />
         </button>
       </SheetTrigger>
-      <SheetContent position="left" className="w-60 dark:border-gray-600 border-r-gray-200">
-        <div className={"flex pb-1.5  pt-4"}>
-          <Logo />
-        </div>
-        <ExpandedMenu menuItems={menuItems} onItemClick={() => setOpen(false)} />
+      <SheetContent position="left" className="w-72 dark:border-gray-600 border-r-gray-200">
+        <ScrollArea className={cx("h-full", "z-50")}>
+          <Viewport className="flex flex-col gap-6 pr-4">
+            <div className={"flex pb-1.5  pt-4 "}>
+              <Logo />
+            </div>
+            <ExpandedMenu menuItems={menuItems} onItemClick={() => setOpen(false)} />
+          </Viewport>
+        </ScrollArea>
       </SheetContent>
     </Sheet>
   )
