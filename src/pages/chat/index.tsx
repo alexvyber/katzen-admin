@@ -17,7 +17,7 @@ export default function ChatPage() {
   const { isActiveChat, isOpenInfo, isMobileChatSidebar, contacts, searchContactTerm } =
     useAppSelector((state) => state.chat)
 
-  const searchContactTerms = contacts?.filter((item) =>
+  const filteredContacts = contacts?.filter((item) =>
     item.fullName.toLowerCase().includes(searchContactTerm.toLowerCase())
   )
 
@@ -51,8 +51,8 @@ export default function ChatPage() {
 
           <ScrollArea className="pb-10 h-full">
             <Viewport className="flex flex-col gap-1">
-              {searchContactTerms?.map((contact, i) => (
-                <Contacts key={i} contact={contact} />
+              {filteredContacts?.map((contact) => (
+                <Contacts key={contact.id} contact={contact} />
               ))}
             </Viewport>
           </ScrollArea>

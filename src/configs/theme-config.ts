@@ -9,5 +9,5 @@ export const themeConfig: ThemeConfig = {
   appName: "Katzen Admin",
   darkMode: false,
   contentWidth: "full",
-  menuCollapsed: true,
+  menuCollapsed: false,
 }

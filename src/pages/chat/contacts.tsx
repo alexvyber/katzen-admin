@@ -1,7 +1,7 @@
 import { useAppDispatch } from "@/hooks/use-app-dispatcher"
 import { openChat } from "./store"
 import { cx } from "cvax"
-import { Contact, time } from "@/mock/chat-data"
+import { Contact } from "@/mock/chat-data"
 
 export const Contacts = ({
   contact,
@@ -51,7 +51,7 @@ export const Contacts = ({
           </div>
           <div className="flex-none ltr:text-right">
             <span className="block text-xs font-normal text-gray-400 dark:text-gray-400">
-              {time()}
+              {contact.lastMessageTime}
             </span>
             {unredMessages > 0 && (
               <div className="flex justify-end items-end w-full">
