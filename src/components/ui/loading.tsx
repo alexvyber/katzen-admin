@@ -1,12 +1,12 @@
+import { cx } from "cvax"
+
 export function Loading() {
   const isAuth = true
 
   return (
     <div className={!isAuth ? "app_height flex flex-col items-center justify-center" : ""}>
       <svg
-        className={`animate-spin ltr:-ml-1 ltr:mr-3 rtl:-mr-1 rtl:ml-3 ${
-          isAuth ? "h-6 w-6" : "h-12 w-12"
-        } `}
+        className={cx("animate-spin -ml-1 mr-3", isAuth ? "h-6 w-6" : "h-12 w-12")}
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
