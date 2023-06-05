@@ -4,7 +4,7 @@ import { Suspense, lazy } from "react"
 import { Header } from "@/components/partials"
 import { cx } from "cvax"
 import useMenuCollapsed from "@/hooks/use-menu-collapsed"
-import { useWidth } from "@/hooks/use-width"
+import { useWidth } from "@/hooks/use-window-size"
 
 const Sidebar = lazy(() => import("@/components/partials/sidebar"))
 
@@ -22,18 +22,16 @@ export function Layout() {
         </div>
       )}
 
-      <div>
-        <header className={cx(width > breakpoints.lg && (collapsed ? "pl-20" : "pl-60"))}>
-          <Header />
-        </header>
+      <header className={cx(width > breakpoints.lg && (collapsed ? "pl-20" : "pl-60"))}>
+        <Header />
+      </header>
 
-        <div className={cx(width > breakpoints.lg && (collapsed ? "pl-20" : "pl-60 pt-"))}>
-          <main className="flex-1 p-1.5 2xs:p-2">
-            <Suspense fallback={<Loading />}>
-              <Outlet />
-            </Suspense>
-          </main>
-        </div>
+      <div className={cx(width > breakpoints.lg && (collapsed ? "pl-20" : "pl-60"), "h-full")}>
+        <main className="flex-1 p-1.5 w-full h-full 2xs:p-2">
+          <Suspense fallback={<Loading />}>
+            <Outlet />
+          </Suspense>
+        </main>
       </div>
     </>
   )
