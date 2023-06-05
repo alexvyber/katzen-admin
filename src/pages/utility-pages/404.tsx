@@ -12,7 +12,7 @@ export default function Error404() {
             temporarily unavailable.
           </div>
           <div>
-            <ButtonLink variant="outline" to="/home">
+            <ButtonLink variant="outline" to="/">
               Go to homepage
             </ButtonLink>
           </div>
