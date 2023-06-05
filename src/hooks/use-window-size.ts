@@ -10,6 +10,7 @@ type Breakpoints<T extends Record<string, string>> = Prettify<{
 
 export function useWidth() {
   const [width, setWidth] = useState(window.innerWidth)
+  const [height, setHeight] = useState(window.innerHeight)
 
   // breakpoints
   const breakpoints = {} as Breakpoints<typeof screens>
@@ -23,12 +24,14 @@ export function useWidth() {
   useMemo(() => {
     const handleResize = () => {
       setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
     }
+
     window.addEventListener("resize", handleResize)
     return () => {
       window.removeEventListener("resize", handleResize)
     }
   }, [])
 
-  return { width, breakpoints }
+  return { width, height, breakpoints }
 }
