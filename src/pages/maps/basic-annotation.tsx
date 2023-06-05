@@ -12,7 +12,7 @@ export const BasicAnnotation = () => {
         scale: 400,
       }}
     >
-      <Geographies geography={geoUrl} className="fill-slate-100 stroke-slate-300" strokeWidth={0.5}>
+      <Geographies geography={geoUrl} className="fill-gray-100 stroke-gray-300" strokeWidth={0.5}>
         {({ geographies }) =>
           geographies.map((geo) => <Geography key={geo.rsmKey} geography={geo} />)
         }

@@ -170,8 +170,8 @@ function PricingCard({
       <div>
         <header className="mb-6">
           <h4 className="mb-5 text-xl">{title}</h4>
-          <div className="flex relative items-center mb-5 space-x-4 rtl:space-x-reverse">
-            <span className="font-medium leading-10 text-[32px]">{price}</span>
+          <div className="flex relative gap-4 items-center mb-5">
+            <span className="text-xl font-medium leading-10">{price}</span>
 
             {saving && (
               <span className="inline-block py-1 px-3 text-sm font-semibold text-gray-800 uppercase bg-white rounded-xl border">

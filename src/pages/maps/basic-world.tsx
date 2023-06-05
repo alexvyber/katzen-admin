@@ -14,7 +14,7 @@ export const BasicWorldMap = () => {
         {({ geographies }) =>
           geographies.map((geo) => (
             <Geography
-              className="fill-slate-100 stroke-slate-300"
+              className="fill-gray-100 stroke-gray-300"
               strokeWidth={0.5}
               key={geo.rsmKey}
               geography={geo}
