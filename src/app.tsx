@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom"
+import { Route, Routes } from "react-router-dom"
 import { lazy, Suspense } from "react"
 
 import "@/assets/scss/app.scss"
@@ -6,50 +6,54 @@ import { Layout } from "@/layouts/layout"
 
 import { Loading } from "@/components/ui"
 import { Toaster } from "@/components/ui"
-import { menuItems } from "./configs/menu-items"
 
 const Error404 = lazy(() => import("@/pages/utility-pages/404"))
 
-// TODO: Rewrite it pre-release
-// NOTE: dynamicly form routes object
-const routes = {} as Record<
-  string,
-  React.LazyExoticComponent<() => JSX.Element> | (() => JSX.Element)
->
+const ProjectDashboard = lazy(() => import("@/pages/project/dashboard"))
+const Chat = lazy(() => import("@/pages/chat"))
+const Welcome = lazy(() => import("@/pages/welcome"))
+const Changelog = lazy(() => import("@/pages/changelog"))
+const Maps = lazy(() => import("@/pages/maps"))
 
-// TODO: remove pre-release
-menuItems
-  .filter((item) => "link" in item || "path" in item)
-  .forEach((item) => {
-    if ("path" in item) {
-      item.children?.map((child) =>
-        Object.assign(routes, {
-          [`${item.path}/${child.link}`]: child.show
-            ? lazy(() => import(`./pages/${item.path}/${child.link}`))
-            : () => <Navigate to="/utility-pages/blank-page" />,
-        })
-      )
-    }
-
-    if ("link" in item) {
-      Object.assign(routes, {
-        [`${item.link}`]: item.show
-          ? lazy(() => import(`./pages/${item.link}`))
-          : () => <Navigate to="/utility-pages/blank-page" />,
-      })
-    }
-  })
+// utility-pages
+const AccessDenied = lazy(() => import("@/pages/utility-pages/access-denied"))
+const BlankPage = lazy(() => import("@/pages/utility-pages/blank-page"))
+const ComingSoon = lazy(() => import("@/pages/utility-pages/coming-soon"))
+const Faq = lazy(() => import("@/pages/utility-pages/faq"))
+const Pricing = lazy(() => import("@/pages/utility-pages/pricing"))
+const UnderConstruction = lazy(() => import("@/pages/utility-pages/under-construction"))
 
 export function App() {
   return (
     <main className="relative min-h-screen bg-gray-50 dark:bg-gray-800">
       <Routes>
         <Route path="/*" element={<Layout />}>
-          {Object.entries(routes).map(([route, Page]) => (
-            <Route path={route} element={<Page />} />
-          ))}
+          <Route path="chat" element={<Chat />} />
+          <Route path="welcome" element={<Welcome />} />
+          <Route path="changelog" element={<Changelog />} />
+          <Route path="maps" element={<Maps />} />
+          <Route path="" element={<Chat />} />
+
+          <Route path="project/*">
+            <Route path="dashboard" element={<ProjectDashboard />} />
+          </Route>
+
+          <Route path="utility-pages/*">
+            <Route path="access-denied" element={<AccessDenied />} />
+            <Route path="blank-page" element={<BlankPage />} />
+            <Route path="coming-soon" element={<ComingSoon />} />
+            <Route path="faq" element={<Faq />} />
+            <Route path="pricing" element={<Pricing />} />
+            <Route path="under-construction" element={<UnderConstruction />} />
+            <Route path="404" element={<Error404 />} />
+            <Route path="access" element={<AccessDenied />} />
+            <Route path="access" element={<AccessDenied />} />
+            <Route path="access" element={<AccessDenied />} />
+            <Route path="access" element={<AccessDenied />} />
+          </Route>
+
+          <Route path="*" element={withSuspense(Error404)} />
         </Route>
-        <Route path="/404" element={withSuspense(Error404)} />
       </Routes>
       <Toaster />
     </main>
@@ -65,3 +69,6 @@ function withSuspense(
     </Suspense>
   )
 }
+
+type Component = React.LazyExoticComponent<() => JSX.Element> | (() => JSX.Element)
+type Routes = Record<string, Component | Record<string, Component>>
