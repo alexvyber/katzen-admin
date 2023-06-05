@@ -166,7 +166,7 @@ export const menuItems = [
     link: "chat",
   },
   {
-    show: true,
+    show: false,
     title: "Todo",
     icon: "lucide:list-checks",
     link: "todo",
