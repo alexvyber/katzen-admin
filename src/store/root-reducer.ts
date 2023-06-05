@@ -1,5 +1,7 @@
-import theme from "./theme"
+import { chatReducer } from "@/pages/chat/store"
+import { themeReducer } from "./theme"
 
 export const reducer = {
-  theme,
+  theme: themeReducer,
+  chat: chatReducer,
 }

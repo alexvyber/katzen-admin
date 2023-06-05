@@ -36,4 +36,4 @@ function initialMenuCollapsed() {
 
 export const { handleDarkMode, handleMenuCollapsed } = layoutSlice.actions
 export { layoutSlice }
-export default layoutSlice.reducer
+export const themeReducer = layoutSlice.reducer
