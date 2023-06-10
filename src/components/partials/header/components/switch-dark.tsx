@@ -1,4 +1,4 @@
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { useDarkmode } from "@/hooks/use-dark-mode"
 
 export function SwitchDark() {

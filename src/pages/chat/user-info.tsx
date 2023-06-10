@@ -1,4 +1,4 @@
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { ScrollArea, Viewport } from "@/components/ui"
 import { useAppSelector } from "@/hooks/use-app-selector"
 

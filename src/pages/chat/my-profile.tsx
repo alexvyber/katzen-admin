@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { Button } from "@/components/ui"
 import { useAppSelector } from "@/hooks/use-app-selector"
 

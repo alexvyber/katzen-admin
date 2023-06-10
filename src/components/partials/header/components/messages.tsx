@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { messages } from "@/mock/data"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import {
   DropdownMenu,
   DropdownMenuContent,

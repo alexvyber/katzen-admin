@@ -3,7 +3,7 @@ import { sendMessage, toggleisMobileChatSidebar } from "./store"
 import { useWidth } from "@/hooks/use-window-size"
 import { useAppSelector } from "@/hooks/use-app-selector"
 import { useAppDispatch } from "@/hooks/use-app-dispatcher"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { Avatar, AvatarFallback, AvatarImage, ScrollArea, Viewport } from "@/components/ui"
 import { Button } from "@/components/ui/button"
 import {

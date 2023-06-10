@@ -1,5 +1,5 @@
 import { useWidth } from "@/hooks/use-window-size"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { useAppDispatch } from "@/hooks/use-app-dispatcher"
 import { toggleisMobileChatSidebar } from "./store"
 

@@ -4,7 +4,7 @@ import { ItemTrigger, Navmenu, triggerVariants } from "./nav-menu"
 import { cx } from "cvax"
 import { Logo } from "../logo"
 import useMenuCollapsed from "@/hooks/use-menu-collapsed"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { memo } from "react"
 
 const Sidebar = memo(function Sidebar() {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Cog } from "lucide-react"
-import { Icons } from "@/components/icons"
+import { Icons } from "@/components/ui/icons"
 import { Container } from "@/components/ui"
 
 const UnderConstruction = () => {
