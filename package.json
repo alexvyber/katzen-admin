@@ -71,6 +71,7 @@
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",
+    "@ladle/react": "^2.14.0",
     "@types/react": "^18.2.10",
     "@types/react-dom": "^18.2.4",
     "@types/react-simple-maps": "^3.0.0",
