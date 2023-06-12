@@ -22,11 +22,20 @@ const ComingSoon = lazy(() => import("@/pages/utility-pages/coming-soon"))
 const Faq = lazy(() => import("@/pages/utility-pages/faq"))
 const Pricing = lazy(() => import("@/pages/utility-pages/pricing"))
 const UnderConstruction = lazy(() => import("@/pages/utility-pages/under-construction"))
+const Login = lazy(() => import("@/pages/auth/login"))
 
 export function App() {
   return (
     <main className="relative min-h-screen bg-gray-50 dark:bg-gray-800">
       <Routes>
+        <Route
+          path="/"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Login />
+            </Suspense>
+          }
+        />
         <Route path="/*" element={<Layout />}>
           <Route path="chat" element={<Chat />} />
           <Route path="welcome" element={<Welcome />} />
