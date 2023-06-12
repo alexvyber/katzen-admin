@@ -1,0 +1,19 @@
+import React from "react"
+import type { Story } from "@ladle/react"
+
+import { {{ properCase name }} } from './{{ kebabCase name }}';
+
+const meta: Meta = {
+  title: 'Components/{{ kebabCase name }}',
+  component: {{ properCase name }},
+  parameters: {
+    controls: { expanded: true },
+  },
+};
+
+export default meta;
+
+const Template: Story = (props) => <{{ properCase name }} {...props}>Hello</{{ properCase name }}>;
+
+export const Default = Template.bind({});
+Default.args = {};
