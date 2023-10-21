@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 import { Link, type LinkProps } from "react-router-dom"
-import { cn } from "cvax"
+import { cn } from "@/lib/utils"
 
 import { Loader2 } from "lucide-react"
 

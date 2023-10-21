@@ -115,8 +115,8 @@ const ScrollArea = React.forwardRef<ScrollAreaElement, ScrollAreaProps>(
           style={{
             position: "relative",
             // Pass corner sizes as CSS vars to reduce re-renders of context consumers
-            ["--radix-scroll-area-corner-width" as any]: cornerWidth + "px",
-            ["--radix-scroll-area-corner-height" as any]: cornerHeight + "px",
+            ["--radix-scroll-area-corner-width" as any]: `${cornerWidth}px`,
+            ["--radix-scroll-area-corner-height" as any]: `${cornerHeight}px`,
             ...props.style,
           }}
         />
@@ -134,7 +134,7 @@ ScrollArea.displayName = SCROLL_AREA_NAME
 const VIEWPORT_NAME = "ScrollAreaViewport"
 
 type ScrollAreaViewportElement = React.ElementRef<typeof Primitive.div>
-interface ScrollAreaViewportProps extends PrimitiveDivProps {}
+type ScrollAreaViewportProps = PrimitiveDivProps
 
 const ScrollAreaViewport = React.forwardRef<ScrollAreaViewportElement, ScrollAreaViewportProps>(
   (props: ScopedProps<ScrollAreaViewportProps>, forwardedRef) => {
@@ -147,7 +147,8 @@ const ScrollAreaViewport = React.forwardRef<ScrollAreaViewportElement, ScrollAre
         {/* Hide scrollbars cross-browser and enable momentum scroll for touch devices */}
         <style
           dangerouslySetInnerHTML={{
-            __html: `[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}`,
+            __html:
+              "[data-radix-scroll-area-viewport]{scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;}[data-radix-scroll-area-viewport]::-webkit-scrollbar{display:none}",
           }}
         />
         <Primitive.div
@@ -515,7 +516,7 @@ const ScrollAreaScrollbarX = React.forwardRef<
         bottom: 0,
         left: context.dir === "rtl" ? "var(--radix-scroll-area-corner-width)" : 0,
         right: context.dir === "ltr" ? "var(--radix-scroll-area-corner-width)" : 0,
-        ["--radix-scroll-area-thumb-width" as any]: getThumbSize(sizes) + "px",
+        ["--radix-scroll-area-thumb-width" as any]: `${getThumbSize(sizes)}px`,
         ...props.style,
       }}
       onThumbPointerDown={(pointerPos) => props.onThumbPointerDown(pointerPos.x)}
@@ -572,7 +573,7 @@ const ScrollAreaScrollbarY = React.forwardRef<
         right: context.dir === "ltr" ? 0 : undefined,
         left: context.dir === "rtl" ? 0 : undefined,
         bottom: "var(--radix-scroll-area-corner-height)",
-        ["--radix-scroll-area-thumb-height" as any]: getThumbSize(sizes) + "px",
+        ["--radix-scroll-area-thumb-height" as any]: `${getThumbSize(sizes)}px`,
         ...props.style,
       }}
       onThumbPointerDown={(pointerPos) => props.onThumbPointerDown(pointerPos.y)}
@@ -683,7 +684,10 @@ const ScrollAreaScrollbarImpl = React.forwardRef<
       if (isScrollbarWheel) handleWheelScroll(event, maxScrollPos)
     }
     document.addEventListener("wheel", handleWheel, { passive: false })
-    return () => document.removeEventListener("wheel", handleWheel, { passive: false } as any)
+    return () =>
+      document.removeEventListener("wheel", handleWheel, {
+        passive: false,
+      } as any)
   }, [viewport, scrollbar, maxScrollPos, handleWheelScroll])
 
   /**
@@ -713,7 +717,7 @@ const ScrollAreaScrollbarImpl = React.forwardRef<
           if (event.button === mainPointer) {
             const element = event.target as HTMLElement
             element.setPointerCapture(event.pointerId)
-            rectRef.current = scrollbar!.getBoundingClientRect()
+            rectRef.current = scrollbar?.getBoundingClientRect()
             // pointer capture doesn't prevent text selection in Safari
             // so we remove text selection manually when scrolling
             prevWebkitUserSelectRef.current = document.body.style.webkitUserSelect
@@ -765,7 +769,7 @@ const ScrollAreaThumb = React.forwardRef<ScrollAreaThumbElement, ScrollAreaThumb
 )
 
 type ScrollAreaThumbImplElement = React.ElementRef<typeof Primitive.div>
-interface ScrollAreaThumbImplProps extends PrimitiveDivProps {}
+type ScrollAreaThumbImplProps = PrimitiveDivProps
 
 const ScrollAreaThumbImpl = React.forwardRef<ScrollAreaThumbImplElement, ScrollAreaThumbImplProps>(
   (props: ScopedProps<ScrollAreaThumbImplProps>, forwardedRef) => {
@@ -840,7 +844,7 @@ ScrollAreaThumb.displayName = THUMB_NAME
 const CORNER_NAME = "ScrollAreaCorner"
 
 type ScrollAreaCornerElement = ScrollAreaCornerImplElement
-interface ScrollAreaCornerProps extends ScrollAreaCornerImplProps {}
+type ScrollAreaCornerProps = ScrollAreaCornerImplProps
 
 const ScrollAreaCorner = React.forwardRef<ScrollAreaCornerElement, ScrollAreaCornerProps>(
   (props: ScopedProps<ScrollAreaCornerProps>, forwardedRef) => {
@@ -856,7 +860,7 @@ ScrollAreaCorner.displayName = CORNER_NAME
 /* -----------------------------------------------------------------------------------------------*/
 
 type ScrollAreaCornerImplElement = React.ElementRef<typeof Primitive.div>
-interface ScrollAreaCornerImplProps extends PrimitiveDivProps {}
+type ScrollAreaCornerImplProps = PrimitiveDivProps
 
 const ScrollAreaCornerImpl = React.forwardRef<
   ScrollAreaCornerImplElement,
@@ -905,7 +909,7 @@ function toInt(value?: string) {
 
 function getThumbRatio(viewportSize: number, contentSize: number) {
   const ratio = viewportSize / contentSize
-  return isNaN(ratio) ? 0 : ratio
+  return Number.isNaN(ratio) ? 0 : ratio
 }
 
 function getThumbSize(sizes: Sizes) {

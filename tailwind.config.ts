@@ -90,8 +90,6 @@ export default {
   plugins: [],
 } satisfies Config
 
-
-
 function getSpacingRange({
   start,
   numberOfNewSteps,

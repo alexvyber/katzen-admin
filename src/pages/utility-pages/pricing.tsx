@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { cn, cx } from "cvax"
+import { cx } from "cvax"
+import { cn } from "@/lib/utils"
 import { Card, CardHeader, CardContent } from "@/components/ui"
 import { Button, Container } from "@/components/ui"
 

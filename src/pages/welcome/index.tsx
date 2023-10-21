@@ -22,7 +22,7 @@ const Welcome = () => {
   return (
     <Container className="h-full">
       <div className="flex flex-col justify-center items-center h-full">
-        <Suspense fallback={<></>}>
+        <Suspense fallback={null}>
           {surveyStep === 0 && <Step1 onNext={handleNext} onSkip={handleSkip} />}
           {surveyStep === 1 && <Step2 onNext={handleNext} onBack={handleBack} />}
           {surveyStep === 2 && <Step3 onNext={handleNext} onBack={handleBack} />}

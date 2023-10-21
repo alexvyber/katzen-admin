@@ -57,7 +57,7 @@ export const MyProfile = () => {
             <div className="flex-1 text-start">
               <span className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-[2px]">
                 {profileInfo.fullName}
-                <span className="inline-block ml-3 rounded-full status h-[10px] w-[10px] bg-success-500"></span>
+                <span className="inline-block ml-3 rounded-full status h-[10px] w-[10px] bg-success-500" />
               </span>
               <span className="block text-xs font-normal text-gray-500 dark:text-gray-300">
                 Available

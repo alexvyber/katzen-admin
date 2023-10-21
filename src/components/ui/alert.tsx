@@ -1,5 +1,6 @@
 import * as React from "react"
-import { cvax, type VariantProps, cn } from "cvax"
+import { cvax, type VariantProps } from "cvax"
+import { cn } from "@/lib/utils"
 
 const alertVariants = cvax({
   base: "relative w-full rounded-lg border p-4 [&>svg]:absolute [&>svg]:text-foreground [&>svg]:left-4 [&>svg]:top-4 [&>svg+div]:translate-y-[-3px] [&:has(svg)]:pl-11",

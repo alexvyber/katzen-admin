@@ -1,6 +1,6 @@
 // REFACTOR:
 
-import { cn, cvax, cx } from "cvax"
+import { cvax, cx } from "cvax"
 
 import { NavLink } from "react-router-dom"
 import {
@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/menubar"
 import { isItemBasic, isItemWithChildren } from "@/configs/menu-utils"
 import { MenuItemBasic, MenuItems } from "@/configs/menu-types"
+import { cn } from "@/lib/utils"
 
 export const triggerVariants = cvax({
   base: "flex gap-3 justify-center w-full items-center text-sm font-semibold capitalize rounded-lg text-gray-600 dark:text-gray-300 px-2 py-2",
@@ -31,7 +32,10 @@ export const triggerVariants = cvax({
 export function Navmenu({
   menuItems,
   collapsed = false,
-}: { menuItems: MenuItems; collapsed?: boolean }) {
+}: {
+  menuItems: MenuItems
+  collapsed?: boolean
+}) {
   return !collapsed ? (
     <ExpandedMenu menuItems={menuItems} />
   ) : (
@@ -42,7 +46,10 @@ export function Navmenu({
 export function ExpandedMenu({
   menuItems,
   onItemClick,
-}: { menuItems: MenuItems; onItemClick?: () => void }) {
+}: {
+  menuItems: MenuItems
+  onItemClick?: () => void
+}) {
   return (
     <Accordion type="single" collapsible className="flex flex-col">
       {menuItems.map((item, index) => {
@@ -195,11 +202,7 @@ function CollapsedMenu({ menuItems }: { menuItems: MenuItems }) {
 }
 
 // REFACTOR: extract
-function ItemBasic({
-  item,
-}: {
-  item: MenuItemBasic
-}) {
+function ItemBasic({ item }: { item: MenuItemBasic }) {
   return (
     <NavLink className={triggerVariants()} to={item.link}>
       <ItemTrigger item={item} />
@@ -217,7 +220,11 @@ function ItemIcon({ icon }: { icon: string }) {
 }
 
 // REFACTOR: extract
-export function ItemTrigger({ item }: { item: { title: string; icon: string; badge?: string } }) {
+export function ItemTrigger({
+  item,
+}: {
+  item: { title: string; icon: string; badge?: string }
+}) {
   return (
     <div className="flex flex-1 gap-2 items-center">
       <ItemIcon icon={item.icon} />

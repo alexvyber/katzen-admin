@@ -3,11 +3,7 @@ import { openChat } from "./store"
 import { cx } from "cvax"
 import { Contact } from "@/mock/chat-data"
 
-export const Contacts = ({
-  contact,
-}: {
-  contact: Contact
-}) => {
+export const Contacts = ({ contact }: { contact: Contact }) => {
   const { fullName, avatar, status, lastMessage, unredMessages, id } = contact
   const dispatch = useAppDispatch()
 
@@ -46,7 +42,7 @@ export const Contacts = ({
               {fullName}
             </span>
             <span className="block text-xs font-normal text-gray-600 dark:text-gray-300">
-              {lastMessage.slice(0, 20) + "..."}
+              {`${lastMessage.slice(0, 20)}...`}
             </span>
           </div>
           <div className="flex-none ltr:text-right">

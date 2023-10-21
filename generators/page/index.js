@@ -38,17 +38,17 @@ export default {
     return [
       {
         type: "add",
-        path: componentGeneratePath + "/{{kebabCase name}}/index.ts",
+        path: `${componentGeneratePath}/{{kebabCase name}}/index.ts`,
         templateFile: "generators/component/index.ts.hbs",
       },
       {
         type: "add",
-        path: componentGeneratePath + "/{{kebabCase name}}/{{kebabCase name}}.tsx",
+        path: `${componentGeneratePath}/{{kebabCase name}}/{{kebabCase name}}.tsx`,
         templateFile: "generators/component/Component.tsx.hbs",
       },
       {
         type: "add",
-        path: componentGeneratePath + "/{{kebabCase name}}/{{kebabCase name}}.stories.tsx",
+        path: `${componentGeneratePath}/{{kebabCase name}}/{{kebabCase name}}.stories.tsx`,
         templateFile: "generators/component/Component.stories.tsx.hbs",
       },
     ]

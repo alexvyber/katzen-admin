@@ -11,14 +11,6 @@
   },
   "source": "./src/index.ts",
   "main": "./src/index.ts",
-  
-  
-  
   "sideEffects": false,
-
-
-
-
-
   "stableVersion": "1.0.4"
 }

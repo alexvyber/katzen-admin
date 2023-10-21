@@ -29,7 +29,10 @@ const Sidebar = memo(function Sidebar() {
 function CollapseButton({
   collapsed,
   setCollapsed,
-}: { collapsed: boolean; setCollapsed: ReturnType<typeof useMenuCollapsed>[1] }) {
+}: {
+  collapsed: boolean
+  setCollapsed: ReturnType<typeof useMenuCollapsed>[1]
+}) {
   return collapsed ? (
     <button
       className={cx(triggerVariants(), "p-0 group  cursor-pointer relative")}

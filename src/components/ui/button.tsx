@@ -1,5 +1,6 @@
 import { forwardRef } from "react"
-import { VariantProps, cn, cvax } from "cvax"
+import { VariantProps, cvax } from "cvax"
+import { cn } from "@/lib/utils"
 
 import { Loader2 } from "lucide-react"
 

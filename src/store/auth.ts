@@ -97,7 +97,7 @@ export const authSlice = createSlice({
 
       // remove isAuth from local storage
       window.localStorage.removeItem("isAuth")
-      
+
       toast.success("User logged out successfully", {
         position: "top-right",
       })

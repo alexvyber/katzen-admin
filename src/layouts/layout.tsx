@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 import { Suspense, lazy } from "react"
 import { Header } from "@/components/partials"
 import { cx } from "cvax"
+
 import useMenuCollapsed from "@/hooks/use-menu-collapsed"
 import { useWidth } from "@/hooks/use-window-size"
 

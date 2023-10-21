@@ -49,7 +49,9 @@ export const appChatSlice = createSlice({
 })
 
 type MessageDraft = Prettify<
-  Omit<PartialByKeys<Message, "id" | "time" | "from">, "img"> & { to: Contact["id"] }
+  Omit<PartialByKeys<Message, "id" | "time" | "from">, "img"> & {
+    to: Contact["id"]
+  }
 >
 function composeMessage(messageDraft: MessageDraft, state: ChatState): Message {
   return {

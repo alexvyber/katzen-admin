@@ -27,7 +27,7 @@ import { Input } from "@/components/ui"
 import { Label } from "@/components/ui"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui"
-import { cn } from "cvax"
+import { cn } from "@/lib/utils"
 
 const groups = [
   {
@@ -58,7 +58,7 @@ type Team = typeof groups[number]["teams"][number]
 
 type PopoverTriggerProps = React.ComponentPropsWithoutRef<typeof PopoverTrigger>
 
-interface TeamSwitcherProps extends PopoverTriggerProps {}
+type TeamSwitcherProps = PopoverTriggerProps
 
 export function TeamSwitcher({ className }: TeamSwitcherProps) {
   const [open, setOpen] = React.useState(false)

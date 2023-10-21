@@ -88,7 +88,7 @@ function NotificationItem({ item }: any) {
         </div>
         {item.unread && (
           <div className="flex-0">
-            <span className="inline-block rounded-full border border-white dark:border-gray-400 h-[10px] w-[10px] bg-danger-500"></span>
+            <span className="inline-block rounded-full border border-white dark:border-gray-400 h-[10px] w-[10px] bg-danger-500" />
           </div>
         )}
       </div>

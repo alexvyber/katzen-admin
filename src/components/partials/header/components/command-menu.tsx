@@ -15,8 +15,6 @@ import {
   CommandList,
 } from "@/components/ui/command"
 
-import { cn } from "cvax"
-
 export function CommandMenu({ ...props }: DialogProps) {
   const [open, setOpen] = React.useState(false)
 

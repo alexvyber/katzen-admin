@@ -83,24 +83,27 @@ for (const contact of contacts) {
 function time(initDate?: Date | string) {
   const date = initDate
     ? new Date(initDate)
-    : faker.date.between({ from: new Date("1995-12-17T03:24:00"), to: new Date() })
+    : faker.date.between({
+        from: new Date("1995-12-17T03:24:00"),
+        to: new Date(),
+      })
   const hours = date.getHours()
   const minutes = date.getMinutes()
   const ampm = hours >= 12 ? "pm" : "am"
   const hours12 = hours % 12 || 12
-  const minutesStr = minutes < 10 ? "0" + minutes : minutes
-  return hours12 + ":" + minutesStr + " " + ampm
+  const minutesStr = minutes < 10 ? `0${minutes}` : minutes
+  return `${hours12}:${minutesStr} ${ampm}`
 }
 
 function random<T, U>(left: T, right: U): T | U {
   return Math.random() > 0.5 ? left : right
 }
 
-function randomInt(endRange: number = 1) {
+function randomInt(endRange = 1) {
   return Math.floor(Math.random() * endRange)
 }
 
-function randomTimes<R>(callback: () => R, repeats: number = 5): R[] {
+function randomTimes<R>(callback: () => R, repeats = 5): R[] {
   return [...Array(repeats)].map((_) => callback())
 }
 

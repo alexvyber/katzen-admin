@@ -4,7 +4,11 @@ import Tooltip from "react-tooltip"
 
 const geoUrl = "/data/maps-data.json"
 
-const MapChart = ({ setTooltipContent }: { setTooltipContent: (val: string) => void }) => {
+const MapChart = ({
+  setTooltipContent,
+}: {
+  setTooltipContent: (val: string) => void
+}) => {
   return (
     <ComposableMap data-tip="" height={200} projectionConfig={{ scale: 80 }}>
       <Geographies geography={geoUrl}>

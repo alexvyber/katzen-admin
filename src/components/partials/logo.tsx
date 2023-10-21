@@ -6,7 +6,10 @@ import { cx } from "cvax"
 export function Logo({
   collapsed = false,
   className,
-}: { collapsed?: boolean; className?: string }) {
+}: {
+  collapsed?: boolean
+  className?: string
+}) {
   return (
     <NavLink
       to="/"

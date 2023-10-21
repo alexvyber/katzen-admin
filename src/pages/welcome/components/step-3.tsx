@@ -15,7 +15,11 @@ import { useState } from "react"
 import { cx } from "cvax"
 
 const roles = [
-  { value: "softwareEngineer", label: "Software Engineer", icon: HiOutlineCode },
+  {
+    value: "softwareEngineer",
+    label: "Software Engineer",
+    icon: HiOutlineCode,
+  },
   { value: "productManager", label: "Product Manager", icon: HiOutlineCube },
   { value: "designer", label: "Designer", icon: HiOutlinePencil },
   { value: "qaTester", label: "QA Tester", icon: HiOutlineShieldCheck },

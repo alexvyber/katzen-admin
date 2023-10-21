@@ -15,6 +15,6 @@
 
 export default {
   stories: "src/**/*.stories.{ts,tsx}",
-  appendToHead: `<style>.append {}</style>`,
+  appendToHead: "<style>.append {}</style>",
   port: 9000,
 }

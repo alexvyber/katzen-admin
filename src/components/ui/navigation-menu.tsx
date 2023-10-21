@@ -1,7 +1,9 @@
 import * as React from "react"
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu"
-import { cvax, cn } from "cvax"
+import { cvax } from "cvax"
+
 import { ChevronDown } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
